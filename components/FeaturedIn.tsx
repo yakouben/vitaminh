@@ -1,10 +1,11 @@
 import ScrollAnimation from "./ScrollAnimation";
 
+// Key studio differentiators shown as a 4-column stat grid
 const pillars = [
-  { n: "50 min", label: "Immersive classes", desc: "Every session fully programmed — no filler, no fluff. Just precise, intentional movement from minute one." },
-  { n: "100%", label: "Certified coaches", desc: "Every coach at Vitaminh is fully certified and trained to guide you safely, whatever your level." },
-  { n: "4", label: "Disciplines under one roof", desc: "Lagree · Hot Pilates · Yoga · Mobility. The complete toolkit for your body, in one premium space." },
-  { n: "<12", label: "Students per class", desc: "Small groups, personal attention. You are never lost in the crowd. Every rep matters." },
+  { n: "50 min", label: "Immersive classes",       desc: "Every session fully programmed — no filler, no fluff. Just precise, intentional movement from minute one." },
+  { n: "100%",   label: "Certified coaches",        desc: "Every coach at Vitaminh is fully certified and trained to guide you safely, whatever your level." },
+  { n: "4",      label: "Disciplines under one roof", desc: "Lagree · Hot Pilates · Yoga · Mobility. The complete toolkit for your body, in one premium space." },
+  { n: "<12",    label: "Students per class",       desc: "Small groups, personal attention. You are never lost in the crowd. Every rep matters." },
 ];
 
 export default function FeaturedIn() {

@@ -4,6 +4,7 @@ import { useState } from "react";
 import ScrollAnimation from "./ScrollAnimation";
 import { StaggerGroup, StaggerItem } from "./ScrollAnimation";
 
+// Studio rules shown in the left column
 const rules = [
   "Arrive 15 minutes before your first class — a coach will walk you through the equipment.",
   "Maximum 12 students per session — personal attention, every time.",
@@ -14,6 +15,7 @@ const rules = [
   "All fitness levels welcome. We offer modifications for every exercise.",
 ];
 
+// FAQ entries shown as an accordion in the right column
 const faqs = [
   {
     q: "What is the Lagree method?",
@@ -45,6 +47,7 @@ const faqs = [
   },
 ];
 
+// Accordion item — max-h animates 0 → open (CSS can't transition height:auto)
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
@@ -82,7 +85,7 @@ export default function FAQSection() {
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
-          {/* Left — Rules */}
+          {/* Left — Studio rules checklist */}
           <div className="w-full lg:w-[42%]">
             <ScrollAnimation animation="fadeInLeft">
               <p className="font-body text-[11px] tracking-[4px] uppercase text-vl-terra mb-8">What to expect</p>

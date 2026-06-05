@@ -1,6 +1,13 @@
 import ScrollAnimation from "./ScrollAnimation";
 import Image from "next/image";
 
+// Contact info rows — label / value pairs
+const info: [string, string][] = [
+  ["Classes",   "Mon – Sat · 07:00 – 20:00"],
+  ["Email",     "hello@vitaminh.studio"],
+  ["Instagram", "@vitaminh.studio"],
+];
+
 export default function LocationSection() {
   return (
     <section id="contact" className="w-full bg-vl-cream py-24 px-5 sm:px-8 md:px-14 scroll-mt-24">
@@ -15,7 +22,7 @@ export default function LocationSection() {
 
         <div className="flex flex-col lg:flex-row gap-12 items-start">
 
-          {/* Address + info */}
+          {/* Left — address + contact info */}
           <ScrollAnimation animation="fadeInLeft" className="w-full lg:w-[35%] flex flex-col gap-8">
             <div>
               <p className="eyebrow mb-3">VITAMINH LAGREE BODY LAB</p>
@@ -26,11 +33,7 @@ export default function LocationSection() {
             </div>
             <div className="w-full h-px bg-vl-terra/15" />
             <div className="flex flex-col gap-3">
-              {[
-                ["Classes", "Mon – Sat · 07:00 – 20:00"],
-                ["Email",   "hello@vitaminh.studio"],
-                ["Instagram", "@vitaminh.studio"],
-              ].map(([k, v]) => (
+              {info.map(([k, v]) => (
                 <div key={k} className="flex justify-between items-center">
                   <span className="font-body text-[11px] tracking-[3px] uppercase text-vl-muted/40">{k}</span>
                   <span className="font-body text-[13px] font-300 text-vl-muted">{v}</span>
@@ -38,7 +41,7 @@ export default function LocationSection() {
               ))}
             </div>
 
-            {/* Logo watermark card */}
+            {/* Decorative brand card */}
             <div className="relative bg-vl-terra p-8 overflow-hidden mt-4">
               <Image src="/logo.png" alt="" width={120} height={120}
                 className="absolute -right-4 -bottom-4 opacity-10 w-28 h-28" />
@@ -48,7 +51,7 @@ export default function LocationSection() {
             </div>
           </ScrollAnimation>
 
-          {/* Map */}
+          {/* Right — embedded Google Map */}
           <ScrollAnimation animation="fadeInRight" className="w-full lg:w-[65%]">
             <div className="w-full h-[420px]">
               <iframe

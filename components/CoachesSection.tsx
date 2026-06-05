@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 
+// Coach roster — update specialty tag and image when coaches change
 const coaches = [
   {
     name: "Nhut",

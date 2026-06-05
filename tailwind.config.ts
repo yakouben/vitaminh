@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        herspace: {
+        vitaminh: {
           brown: "#602c21",
           rose: "#c9a99a",
           "light-rose": "#e8d5ce",

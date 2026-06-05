@@ -1,5 +1,6 @@
 import { VelocityRow } from "./VelocityMarquee";
 
+// Second marquee — sits between FAQ and Newsletter, darker/softer palette
 export default function MarqueeSection2() {
   return (
     <section className="w-full bg-vl-cream py-8 overflow-hidden border-y border-vl-terra/15 flex flex-col gap-3">

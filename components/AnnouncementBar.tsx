@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 
+// Thin top bar — update copy here when running promos or location changes
 export default function AnnouncementBar() {
   return (
     <div className="w-full bg-[#1c0f09] text-[#faf3e0] text-[11px] font-body tracking-[2px] uppercase py-3 px-4 text-center">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 
+// highlight: true = terracotta background, used for the featured "Most Popular" plan
 const plans = [
   {
     tag: "New Members",

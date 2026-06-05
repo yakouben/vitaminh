@@ -6,7 +6,7 @@ export default function AboutSection() {
     <section id="studio" className="w-full bg-vl-cream py-24 px-5 sm:px-8 md:px-14 scroll-mt-24">
       <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-20">
 
-        {/* Left */}
+        {/* Left — studio description */}
         <ScrollAnimation animation="fadeInLeft" className="w-full lg:w-1/2">
           <p className="eyebrow mb-6">The Studio</p>
           <h2 className="font-heading text-[clamp(36px,5vw,60px)] text-vl-terra mb-8 leading-[1em]">
@@ -20,7 +20,7 @@ export default function AboutSection() {
           </p>
         </ScrollAnimation>
 
-        {/* Right — image with editorial frame */}
+        {/* Right — editorial image with location badge */}
         <ScrollAnimation animation="fadeInRight" className="w-full lg:w-1/2 relative">
           <Image
             src="/studio/reformer2.jpg"
@@ -30,6 +30,7 @@ export default function AboutSection() {
             loading="lazy"
             className="w-full h-auto object-cover"
           />
+          {/* Location badge — hidden on mobile to avoid overlap */}
           <div className="absolute -bottom-5 -left-5 bg-vl-terra px-6 py-4 hidden md:block">
             <p className="font-heading text-[13px] text-vl-cream tracking-widest uppercase">Ho Chi Minh City</p>
           </div>

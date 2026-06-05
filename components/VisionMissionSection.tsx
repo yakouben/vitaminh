@@ -5,27 +5,12 @@ import { useRef } from "react";
 import ScrollAnimation from "./ScrollAnimation";
 import { StaggerGroup, StaggerItem } from "./ScrollAnimation";
 
+// Brand pillars — numbered list in the right column
 const pillars = [
-  {
-    n: "01",
-    word: "Strength",
-    line: "Build deep, functional strength that carries beyond the studio.",
-  },
-  {
-    n: "02",
-    word: "Control",
-    line: "Slow, precise movement. Every rep deliberate, every muscle engaged.",
-  },
-  {
-    n: "03",
-    word: "Breath",
-    line: "Connect breath to movement. Calm the nervous system. Reset.",
-  },
-  {
-    n: "04",
-    word: "Recovery",
-    line: "Rest is part of training. Restoration is transformation.",
-  },
+  { n: "01", word: "Strength",  line: "Build deep, functional strength that carries beyond the studio." },
+  { n: "02", word: "Control",   line: "Slow, precise movement. Every rep deliberate, every muscle engaged." },
+  { n: "03", word: "Breath",    line: "Connect breath to movement. Calm the nervous system. Reset." },
+  { n: "04", word: "Recovery",  line: "Rest is part of training. Restoration is transformation." },
 ];
 
 export default function VisionMissionSection() {
@@ -35,20 +20,17 @@ export default function VisionMissionSection() {
     offset: ["start end", "end start"],
   });
 
-  // Parallax on the big tagline word
+  // Parallax: tagline drifts slightly down as you scroll, logo drifts up
   const taglineY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-  // Logo watermark drifts up slowly
-  const logoY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+  const logoY    = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-vl-dark overflow-hidden relative"
-    >
+    <section ref={sectionRef} className="w-full bg-vl-dark overflow-hidden relative">
+
       {/* ── PART 1: Giant editorial statement ── */}
       <div className="relative pt-24 pb-0 px-5 sm:px-10 md:px-16 overflow-hidden">
 
-        {/* Floating VL logo — parallax */}
+        {/* Floating logo watermark — moves at a different scroll speed */}
         <motion.div
           style={{ y: logoY }}
           className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
@@ -67,7 +49,7 @@ export default function VisionMissionSection() {
             <p className="eyebrow mb-8 text-vl-terra">Our Vision</p>
           </ScrollAnimation>
 
-          {/* Massive parallax headline */}
+          {/* Headline parallaxes independently of the logo */}
           <motion.h2
             style={{ y: taglineY }}
             className="font-heading text-[clamp(56px,12vw,160px)] text-vl-cream leading-[0.9em] uppercase select-none"
@@ -78,11 +60,11 @@ export default function VisionMissionSection() {
         </div>
       </div>
 
-      {/* ── PART 2: Quote + pillars ── */}
+      {/* ── PART 2: Quote + brand pillars ── */}
       <div className="px-5 sm:px-10 md:px-16 pt-20 pb-0 relative z-10">
         <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
 
-          {/* Left — quote block */}
+          {/* Left — vision quote */}
           <ScrollAnimation animation="fadeInLeft" className="w-full lg:w-[50%]">
             <blockquote className="border-l-2 border-vl-terra pl-8">
               <p className="font-heading text-[clamp(20px,2.5vw,28px)] text-vl-cream leading-[1.4em] italic mb-6">
@@ -100,7 +82,7 @@ export default function VisionMissionSection() {
             </p>
           </ScrollAnimation>
 
-          {/* Right — 4 pillars with hover lines */}
+          {/* Right — 4 pillars with hover line transitions */}
           <div className="w-full lg:w-[50%]">
             <StaggerGroup className="flex flex-col">
               {pillars.map((p) => (

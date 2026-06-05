@@ -1,20 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Site-map links rendered in a 3-column grid
+const navLinks: [string, string][] = [
+  ["Home",       "#"],
+  ["Classes",    "#classes"],
+  ["Timetable",  "#"],
+  ["Pricing",    "#book"],
+  ["Contact",    "#contact"],
+  ["FAQ",        "#"],
+  ["Lagree",     "#classes"],
+  ["Hot Pilates","#classes"],
+  ["Yoga",       "#classes"],
+];
+
 export default function Footer() {
   return (
     <footer className="w-full bg-vl-dark pt-16 pb-10 px-8 md:px-14 relative overflow-hidden">
 
-      {/* Logo watermark */}
+      {/* Decorative logo watermark — bottom-right corner */}
       <div className="absolute right-0 bottom-0 pointer-events-none">
-        <Image src="/logo.png" alt="" width={300} height={300}
-          className="w-64 h-64 object-contain opacity-[0.04]" />
+        <Image src="/logo.png" alt="" width={300} height={300} className="w-64 h-64 object-contain opacity-[0.04]" />
       </div>
 
       <div className="max-w-[1300px] mx-auto relative z-10">
 
-        {/* Top — brand + tagline */}
+        {/* Top row — brand, nav links, socials */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 pb-14 border-b border-vl-cream/10">
+
+          {/* Brand block */}
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <Image src="/logo.png" alt="VITAMINH" width={44} height={44} className="w-10 h-10 object-contain" />
@@ -28,18 +42,9 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Nav links */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-3">
-            {[
-              ["Home", "#"],
-              ["Classes", "#classes"],
-              ["Timetable", "#"],
-              ["Pricing", "#book"],
-              ["Contact", "#contact"],
-              ["FAQ", "#"],
-              ["Lagree", "#classes"],
-              ["Hot Pilates", "#classes"],
-              ["Yoga", "#classes"],
-            ].map(([label, href]) => (
+            {navLinks.map(([label, href]) => (
               <Link key={label} href={href}
                 className="font-body text-[12px] font-300 text-vl-cream/40 hover:text-vl-cream transition-colors tracking-wide">
                 {label}
@@ -47,7 +52,7 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Social */}
+          {/* Social icons */}
           <div className="flex flex-col gap-4">
             <p className="font-body text-[10px] tracking-[3px] uppercase text-vl-cream/30">Social</p>
             <div className="flex gap-3">
@@ -78,7 +83,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Bottom row — copyright + legal links */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-8">
           <p className="font-body text-[11px] font-300 text-vl-cream/25 tracking-wide">
             ©2025 VITAMINH LAGREE BODY LAB — All rights reserved

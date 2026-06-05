@@ -6,6 +6,7 @@ export default function CafeSection() {
   return (
     <section className="w-full bg-vl-dark py-24 px-5 sm:px-8 md:px-14">
       <div className="max-w-[1300px] mx-auto">
+
         <ScrollAnimation animation="fadeInUp" className="mb-16">
           <p className="font-body text-[11px] tracking-[4px] uppercase text-vl-cream/40 mb-4">03 & 04</p>
           <h2 className="font-heading text-[clamp(40px,5vw,64px)] text-vl-cream leading-[1em]">
@@ -13,7 +14,7 @@ export default function CafeSection() {
           </h2>
         </ScrollAnimation>
 
-        {/* Two discipline cards with images */}
+        {/* Yoga + Mobility cards side by side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
           {/* Yoga */}

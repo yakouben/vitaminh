@@ -12,7 +12,8 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen] = useState(false);
+  // Turns solid after 60px scroll — keeps hero image visible on initial load
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function Navbar() {
               <Link key={l.label} href={l.href}
                 className="font-body text-[11px] tracking-[2px] uppercase text-vl-terra relative group py-1">
                 {l.label}
+                {/* Underline slides in from left on hover */}
                 <span className="absolute bottom-0 left-0 w-full h-px bg-vl-terra scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             ))}
@@ -57,16 +59,15 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Burger */}
-          <button className="lg:hidden flex flex-col gap-1.5 p-2" onClick={() => setOpen(!open)}
-            aria-label="Menu">
+          {/* Burger — 3 spans rotate into an × when open */}
+          <button className="lg:hidden flex flex-col gap-1.5 p-2" onClick={() => setOpen(!open)} aria-label="Menu">
             <span className={`w-7 h-[2px] bg-vl-terra transition-all duration-300 ${open ? "rotate-45 translate-y-[7px]" : ""}`} />
             <span className={`w-7 h-[2px] bg-vl-terra transition-all duration-300 ${open ? "opacity-0" : ""}`} />
             <span className={`w-7 h-[2px] bg-vl-terra transition-all duration-300 ${open ? "-rotate-45 -translate-y-[7px]" : ""}`} />
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu — max-h animates 0 → 400px; CSS can't transition height:auto */}
         <div className={`lg:hidden overflow-hidden transition-all duration-400 ease-in-out ${open ? "max-h-[400px]" : "max-h-0"}`}>
           <div className="bg-vl-cream border-t border-vl-terra/10 px-6 py-6 flex flex-col gap-5">
             {links.map((l) => (
@@ -82,7 +83,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Spacer so content starts below fixed nav */}
+      {/* Spacer so content starts below the fixed nav bar */}
       <div className="h-20" />
     </>
   );

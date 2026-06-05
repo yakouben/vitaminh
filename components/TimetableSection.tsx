@@ -46,6 +46,7 @@ const schedule = [
   ]},
 ];
 
+// Discipline → dot background color (used in legend + each class slot)
 const dot: Record<string, string> = {
   "Lagree":      "bg-vl-terra",
   "Hot Pilates": "bg-[#e8a87c]",
@@ -53,6 +54,7 @@ const dot: Record<string, string> = {
   "Mobility":    "bg-vl-light-terra",
 };
 
+// Discipline → text color for the class name label
 const label: Record<string, string> = {
   "Lagree":      "text-vl-terra",
   "Hot Pilates": "text-[#c07040]",
@@ -75,7 +77,7 @@ export default function TimetableSection() {
           </p>
         </ScrollAnimation>
 
-        {/* Discipline legend */}
+        {/* Legend */}
         <ScrollAnimation animation="fadeInUp" className="flex flex-wrap gap-4 mb-10">
           {Object.entries(dot).map(([name, cls]) => (
             <div key={name} className="flex items-center gap-2">
@@ -86,10 +88,10 @@ export default function TimetableSection() {
         </ScrollAnimation>
 
         {/*
-          Grid layout:
-          - mobile (default):  2 columns  → 3 rows of 2 days
-          - md (768px+):       3 columns  → 2 rows of 3 days
-          - lg (1024px+):      6 columns  → 1 row of all 6 days
+          Grid columns:
+          - mobile:  2 cols (3 rows of 2 days)
+          - md:      3 cols (2 rows of 3 days)
+          - lg:      6 cols (all 6 days in one row)
         */}
         <StaggerGroup className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-vl-terra/10">
           {schedule.map((col) => (

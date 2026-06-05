@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 
+// Exclusive recurring events — update when the monthly schedule changes
 const surprises = [
   {
     date: "Monthly",
@@ -37,6 +38,7 @@ export default function SurpriseClassesSection() {
           </p>
         </ScrollAnimation>
 
+        {/* Event list — divider lines create the row separators */}
         <div className="flex flex-col divide-y divide-vl-cream/10">
           {surprises.map((s, i) => (
             <ScrollAnimation key={s.name} animation="fadeInUp" delay={i * 0.1}

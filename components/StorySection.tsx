@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 
+// The 4 core disciplines offered at Vitaminh
 const disciplines = [
   {
     name: "Lagree",
@@ -40,6 +41,7 @@ export default function StorySection() {
           </h2>
         </ScrollAnimation>
 
+        {/* 2×2 grid — bg-vl-terra/15 on the wrapper creates the 1px gap between cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-vl-terra/15">
           {disciplines.map((d, i) => (
             <ScrollAnimation key={d.name} animation="fadeInUp" delay={i * 0.1}

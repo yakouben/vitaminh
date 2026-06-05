@@ -29,6 +29,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [idx, setIdx] = useState(0);
 
+  // Auto-advance every 6s; clears on unmount
   useEffect(() => {
     const t = setInterval(() => setIdx((p) => (p + 1) % testimonials.length), 6000);
     return () => clearInterval(t);
@@ -37,7 +38,7 @@ export default function TestimonialsSection() {
   return (
     <section className="w-full bg-vl-cream py-24 px-5 sm:px-8 md:px-14 relative overflow-hidden">
 
-      {/* Logo watermark */}
+      {/* Subtle logo watermark in background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <Image src="/logo.png" alt="" width={500} height={500} className="w-[400px] h-[400px] object-contain opacity-[0.04]" />
       </div>
@@ -45,6 +46,7 @@ export default function TestimonialsSection() {
       <div className="max-w-[900px] mx-auto flex flex-col items-center text-center relative z-10">
         <p className="eyebrow mb-12">What they say</p>
 
+        {/* Slide container — all testimonials stacked; active one fades up into view */}
         <div className="relative min-h-[340px] md:min-h-[280px] w-full flex items-center justify-center">
           {testimonials.map((t, i) => (
             <div key={i}
@@ -60,10 +62,10 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Dots */}
+        {/* Dot navigation */}
         <div className="flex gap-3 mt-8 mb-14">
           {testimonials.map((_, i) => (
-            <button key={i} onClick={() => setIdx(i)}
+            <button key={i} onClick={() => setIdx(i)} aria-label={`Testimonial ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${i === idx ? "w-6 h-1.5 bg-vl-terra" : "w-1.5 h-1.5 bg-vl-terra/25"}`} />
           ))}
         </div>

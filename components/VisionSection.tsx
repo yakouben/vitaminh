@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 
+// Hot Pilates feature checklist — shown as a bullet list on the right panel
 const features = [
   "50-minute full body session",
   "Infrared heat at 35°C",
@@ -15,7 +16,7 @@ export default function VisionSection() {
     <section className="w-full bg-vl-cream py-24 px-5 sm:px-8 md:px-14">
       <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
 
-        {/* Left — fill image with heat overlay */}
+        {/* Left — image with heat overlay badges */}
         <ScrollAnimation animation="fadeInLeft" className="w-full lg:w-[55%] relative min-h-[460px] lg:min-h-[580px] overflow-hidden">
           <Image
             src="https://images.pexels.com/photos/8769163/pexels-photo-8769163.jpeg?auto=compress&cs=tinysrgb&w=1400&h=1000&dpr=1"
@@ -25,17 +26,20 @@ export default function VisionSection() {
             sizes="(max-width: 1024px) 100vw, 55vw"
             className="object-cover object-center"
           />
+          {/* Warm heat gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#8b2500]/30 via-transparent to-vl-dark/40" />
+          {/* Temperature badge */}
           <div className="absolute top-6 right-6 bg-vl-terra px-5 py-4">
             <p className="font-heading text-[32px] text-vl-cream leading-none">35°C</p>
             <p className="font-body text-[9px] tracking-[3px] uppercase text-vl-cream/70 mt-1">Infrared heat</p>
           </div>
+          {/* Bottom label */}
           <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-vl-dark/60 to-transparent">
             <p className="font-heading text-[13px] tracking-[4px] uppercase text-vl-cream/80">Hot Pilates · Vitaminh</p>
           </div>
         </ScrollAnimation>
 
-        {/* Right — text */}
+        {/* Right — description + feature list */}
         <ScrollAnimation animation="fadeInRight" className="w-full lg:w-[45%] flex flex-col justify-center gap-6">
           <p className="eyebrow">02 — The Burn</p>
           <h2 className="font-heading text-[clamp(40px,5vw,64px)] text-vl-terra leading-[1em]">Hot Pilates</h2>

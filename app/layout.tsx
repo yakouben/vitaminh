@@ -4,20 +4,21 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "VITAMINH Lagree Body Lab - Thao Dien, Ho Chi Minh City",
   description:
-    "Reformer Pilates I Yoga I Bootcamp - VITAMINH is a 400sqm brand new premium studio in the city centre of Munich, designed exclusively by women for women.",
+    "Lagree Fitness I Pilates I Strength - VITAMINH is a premium boutique fitness studio in Thao Dien, Ho Chi Minh City.",
   openGraph: {
     title: "VITAMINH Lagree Body Lab - Thao Dien, Ho Chi Minh City",
     description:
-      "Reformer Pilates I Yoga I Bootcamp - VITAMINH is a 400sqm brand new premium studio in the city centre of Munich, designed exclusively by women for women.",
-    siteName: "VITAMINH Studio",
+      "Lagree Fitness I Pilates I Strength - VITAMINH is a premium boutique fitness studio in Thao Dien, Ho Chi Minh City.",
+    url: "https://vitaminh.com/",
+    siteName: "VITAMINH Lagree Body Lab",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "REFORMER PILATES I YOGA I BOOTCAMP - VITAMINH Studio",
+    title: "LAGREE FITNESS I PILATES I STRENGTH - VITAMINH Lagree Body Lab",
     description:
-      "Reformer Pilates I Yoga I Bootcamp - VITAMINH is a 400sqm brand new premium studio in the city centre of Munich, designed exclusively by women for women.",
+      "Lagree Fitness I Pilates I Strength - VITAMINH is a premium boutique fitness studio in Thao Dien, Ho Chi Minh City.",
   },
 };
 

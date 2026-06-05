@@ -3,31 +3,14 @@ import Link from "next/link";
 import ScrollAnimation from "./ScrollAnimation";
 import { StaggerGroup, StaggerItem } from "./ScrollAnimation";
 
+// Instagram feed preview — update src/caption when new content goes live
 const posts = [
-  {
-    src: "/studio/reformer2.jpg",
-    caption: "Lagree. The method that changes everything.",
-  },
-  {
-    src: "/pilates1.png",
-    caption: "Every rep. Intentional. Controlled. Precise.",
-  },
-  {
-    src: "https://images.pexels.com/photos/33360042/pexels-photo-33360042.jpeg",
-    caption: "Hot Pilates. 35°C. Come sweat with us.",
-  },
-  {
-    src: "https://images.pexels.com/photos/8436684/pexels-photo-8436684.jpeg",
-    caption: "Yoga. Move. Breathe. Reset.",
-  },
-  {
-    src: "https://images.pexels.com/photos/25596894/pexels-photo-25596894.jpeg",
-    caption: "The studio. Thao Dien, Ho Chi Minh City.",
-  },
-  {
-    src: "https://images.pexels.com/photos/8436574/pexels-photo-8436574.jpeg",
-    caption: "Mobility. Slow down to move better.",
-  },
+  { src: "/studio/reformer2.jpg",                                                  caption: "Lagree. The method that changes everything." },
+  { src: "/pilates1.png",                                                           caption: "Every rep. Intentional. Controlled. Precise." },
+  { src: "https://images.pexels.com/photos/33360042/pexels-photo-33360042.jpeg",   caption: "Hot Pilates. 35°C. Come sweat with us." },
+  { src: "https://images.pexels.com/photos/8436684/pexels-photo-8436684.jpeg",     caption: "Yoga. Move. Breathe. Reset." },
+  { src: "https://images.pexels.com/photos/25596894/pexels-photo-25596894.jpeg",   caption: "The studio. Thao Dien, Ho Chi Minh City." },
+  { src: "https://images.pexels.com/photos/8436574/pexels-photo-8436574.jpeg",     caption: "Mobility. Slow down to move better." },
 ];
 
 export default function InstagramSection() {
@@ -49,6 +32,7 @@ export default function InstagramSection() {
           </ScrollAnimation>
         </div>
 
+        {/* 2-col on mobile, 3-col on md+ — caption fades in on hover */}
         <StaggerGroup className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
           {posts.map((p, i) => (
             <StaggerItem key={i}>

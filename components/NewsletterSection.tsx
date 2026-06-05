@@ -5,6 +5,7 @@ import ScrollAnimation from "./ScrollAnimation";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
+  // Flips to true on submit — replaces form with a confirmation message
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -16,7 +17,7 @@ export default function NewsletterSection() {
     <section className="w-full bg-white">
       <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row min-h-[600px]">
 
-        {/* Left — video panel, white bg, no padding */}
+        {/* Left — video panel */}
         <ScrollAnimation
           animation="fadeIn"
           className="w-full lg:w-[55%] relative bg-white overflow-hidden min-h-[320px] sm:min-h-[420px] lg:min-h-0"
@@ -29,9 +30,9 @@ export default function NewsletterSection() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          {/* Right-edge fade blends into the form panel */}
+          {/* Right-edge fade blends seamlessly into the form panel on desktop */}
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none hidden lg:block" />
-          {/* Bottom fade on mobile */}
+          {/* Bottom fade softens the cut on mobile */}
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none lg:hidden" />
         </ScrollAnimation>
 
@@ -40,13 +41,7 @@ export default function NewsletterSection() {
           <ScrollAnimation animation="fadeInRight" className="flex flex-col gap-8 max-w-[480px]">
 
             {/* VL monogram */}
-            <Image
-              src="/logo.png"
-              alt="VL"
-              width={48}
-              height={48}
-              className="w-10 h-10 object-contain opacity-30"
-            />
+            <Image src="/logo.png" alt="VL" width={48} height={48} className="w-10 h-10 object-contain opacity-30" />
 
             <div className="flex flex-col gap-4">
               <p className="eyebrow">Stay in the loop</p>
@@ -59,13 +54,15 @@ export default function NewsletterSection() {
             </div>
 
             {sent ? (
+              // Confirmation state
               <div className="border-l-2 border-vl-terra pl-6 py-2">
-                <p className="font-heading text-[22px] text-vl-terra">You're in.</p>
+                <p className="font-heading text-[22px] text-vl-terra">You&apos;re in.</p>
                 <p className="font-body text-[13px] font-300 text-vl-muted/50 mt-1">
                   Welcome to the Vitaminh inner circle.
                 </p>
               </div>
             ) : (
+              // Subscription form
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <input
                   type="email"
@@ -76,9 +73,7 @@ export default function NewsletterSection() {
                   className="w-full bg-transparent border-b border-vl-terra/25 py-4 font-body text-[14px] text-vl-muted placeholder:text-vl-muted/30 focus:outline-none focus:border-vl-terra transition-colors duration-300"
                 />
                 <div className="flex items-center gap-6">
-                  <button type="submit" className="btn-vl-filled">
-                    Subscribe
-                  </button>
+                  <button type="submit" className="btn-vl-filled">Subscribe</button>
                   <p className="font-body text-[11px] font-300 text-vl-muted/30 tracking-wide">
                     No spam. Unsubscribe anytime.
                   </p>
